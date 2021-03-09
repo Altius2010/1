@@ -25,8 +25,8 @@ function gotPoses(results) {
         nose_y = results[0].pose.nose.y;
     }
 }
-/*function draw() {
+function draw() {
     image(virtualdriver, nose_x - 15, nose_y - 15, 30, 30);
 }function takeSnapshot() {
     save("Virtual Driver.png");
-}*/
+}
