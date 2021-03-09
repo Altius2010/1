@@ -1,8 +1,10 @@
 var nose_x = 0;
 var nose_y = 0;
+
 function preload() {
     virtualdriver = loadImage("https://i.postimg.cc/Y0gNx37C/Power-Steering.png");
 }
+
 function setup() {
     video = createCapture(VIDEO);
     video.size(550, 500);
@@ -11,6 +13,11 @@ function setup() {
     poseNet = ml5.poseNet(video, modelLoaded);
     poseNet.on('pose', gotPoses);
 }
+
+function modelLoaded() {
+    console.log("PoseNet is initialized!");
+}
+
 function gotPoses(results) {
     if (results.length > 0) {
         console.log(results);
